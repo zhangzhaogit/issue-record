@@ -1,0 +1,25 @@
+查看进程： ps -ef|grep java
+停止进程：kill -9 xxxx
+
+启动 ：java -jar /usr/local/bethlabs/service/parkingchuck-server-1.0.0-SNAPSHOT.jar 
+指定环境：java -jar /usr/local/bethlabs/service/parkingchuck-server-1.0.0-SNAPSHOT.jar  --spring.profiles.active=pro
+
+指定配置文件：java -jar /usr/local/bethlabs/service/parkingchuck-server-1.0.0-SNAPSHOT.jar  --spring.config.location=file:///usr/local/bethlabs/service/application.yml
+
+
+
+
+mysql: mysql -u root -p 密码bethlabs
+执行。sql文件 ：使用库，source /icapWeb/BBoxInstall/createdb/chuckweb.sql
+
+
+修改linux中sql密码，远程连接才可连接
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY '1234' WITH GRANT OPTION;
+FLUSH PRIVILEGES；
+
+#LINUX卸载软件
+rpm -qa | grep IcapServer
+rpm -e IcapServer-2.3-2.x86_64
+
+#查看端口
+ lsof -i:8086

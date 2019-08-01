@@ -1,0 +1,27 @@
+1.	类注释 ：* + tab 
+2.	行尾加分号 : ctrl+shift+enter
+3.	统一修改字符串 ：ctrl+w 选中 alt+j挨个选中要修改的
+4.	if(  a != null) : a.notnull 自动生成
+5.	方法被调用的层次 ctrl+alt+h
+	a.当你使用ctrl+alt+h后，使用向下或者向上箭头，选择某个调用，然后按下f4即可跳转到源代码。
+	b.当你使用f4跳转到源代码后，直接使用alt+8就可以跳回去了。就又可以继续看下一个调用的地方了。
+6.	哪些地方调用的方法 ：alt+f7
+7.	列出该类的所有方法 : ctrl+f12
+8.	大括号匹配 : ctrl+]或者ctrl+[
+9.	查看类或字符串的定义 ：ctrl+shift+i
+
+代码分析提示：alt + enter
+
+当前页替换： CTRL + r
+
+设置版本管理忽略文件:
+1.进入idea设置界面
+Windows环境：File - Settings - Editor - File Types
+
+
+2.在下面的ignore files and folders 框里加入 *.iml;.idea;target;
+如下图
+
+
+
+	

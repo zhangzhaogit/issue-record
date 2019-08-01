@@ -1,0 +1,31 @@
+下载并安装MySQL官方的 Yum Repository
+[root@localhost ~]# wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+  使用上面的命令就直接下载了安装用的Yum Repository，大概25KB的样子，然后就可以直接yum安装了。
+
+[root@localhost ~]# yum -y install mysql57-community-release-el7-10.noarch.rpm
+  之后就开始安装MySQL服务器。
+
+[root@localhost ~]# yum -y install mysql-community-server
+
+  首先启动MySQL
+
+[root@localhost ~]# systemctl start  mysqld.service
+  查看MySQL运行状态，运行状态如图：
+
+[root@localhost ~]# systemctl status mysqld.service
+
+ 此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：
+
+[root@localhost ~]# grep "password" /var/log/mysqld.log
+有结果的话 就用此密码登陆
+
+无密码的话
+https://blog.csdn.net/qq_41824275/article/details/88575001
+然后修改密码：UPDATE user SET Password=PASSWORD('1234') where USER='root' and host='root' or host='localhost';
+将网址中添加的skip-grant-tables注释掉
+service mysqld restart
+
+设置远程连接：grant all privileges on *.* to 'root'@'%' identified by "bethlabs" with grant option;
+FLUSH PRIVILEGES;
+
+
