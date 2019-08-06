@@ -23,3 +23,8 @@ rpm -e IcapServer-2.3-2.x86_64
 
 #查看端口
  lsof -i:8086
+
+#win下编辑的.sh需要执行此方法 win下是/r和/n linux没有/r
+sed -i 's/\r$//' config.sh
+#解压 拷贝 移动 tar 
+tar -mxvf gitparkinglot.github.io.tar -C /usr/local/bethlabs/html/
